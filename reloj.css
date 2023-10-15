@@ -4,33 +4,56 @@
     padding: 0;
     border: 0;
 }
-
 body
 {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("./background.png");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./img/background.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
     position: relative;
 }
-
-.container
+.containerClock
+{
+    width: 100%;
+    height: 100%;
+    font-family: 'Press Start 2P', cursive;
+    color: #ffffff;
+    position: absolute;
+    display: grid;
+    grid-template-columns: 70%;
+    grid-template-rows: 20% 10%;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    font-size: 150px;
+}
+.containerClock__h1
+{
+    font-size: 1em;
+    font-weight: 200;
+}
+.containerClock__p
+{
+    font-size: 0.3em;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+}
+.containerBubbles
 {
     display:flex;
     width: 100%;
     height: 100vh;
     overflow: hidden;
     justify-content: center;
-    align-items: center;
+    align-items: end;
 }
-
 .bubbles
 {
     position: relative;
     display: flex;
 }
-
-.bubbles span
+.bubbles__spam
 {
     position: relative;
     width: 6vh;
@@ -42,11 +65,10 @@ body
     0 0 0 10px #dadfe044, 
     0 0 50px #ffffff,
     0 0 100px #ffffff;
-    animation: animate 15s linear infinite;
+    animation: animate 20s linear infinite;
     animation-duration: calc(125s /var(--i));
 }
-
-.bubbles span:nth-child(even)
+.bubbles__spam:nth-child(even)
 {
     background: #fad2eb;
     box-shadow: 
@@ -54,57 +76,99 @@ body
     0 0 50px #f3a6ef,
     0 0 100px #bd7daf;
 }
-
-.container-clock
-{
-    display: grid;
-    font-family: 'Press Start 2P', cursive;
-    color: rgb(255, 255, 255);
-    position: absolute;
-    place-items: center;
-    text-align: center;
-}
-
-.container-clock h1
-{
-    font-size: 7.5vw;
-    font-weight: 200;
-}
-
-.container-clock p
-{
-    font-size: 2vw;
-    font-family: 'Press Start 2P', cursive;
-}
-
-audio {
-    width: 100%;
-    background-color: #f2f2f2;
-    padding: 10px;
-    border-radius: 5px;
-}
-
 @keyframes animate
 {
     0%
     {
-        transform: translateY(100vh) scale(1);
+        transform: translateY(20vh) scale(1.5);
     }
     100%
     {
-        transform: translateY(-60vh) scale(1);
+        transform: translateY(-100vh) scale(0.8);
     }
 }
-
+@media screen and (max-width: 1400px) {
+    .containerClock
+    {
+        display: grid;
+        grid-template-columns: 75%;
+        grid-template-rows: 20% 8%;
+        font-size: 90px;
+    }
+    .containerClock__h1
+    {
+        font-size: 1em;
+    }
+    .containerClock__p
+    {
+        font-size: 0.3em;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .containerClock
+    {
+        display: grid;
+        grid-template-columns: 75%;
+        grid-template-rows: 10% 5%;
+        font-size: 70px;
+    }
+    .containerClock__h1
+    {
+        font-size: 1em;
+    }
+    .containerClock__p
+    {
+        font-size: 0.3em;
+    }
+}
+@media screen and (max-width: 900px) {
+    .containerClock
+    {
+        display: grid;
+        grid-template-columns: 75%;
+        grid-template-rows: 8% 4%;
+        font-size: 60px;
+    }
+    .containerClock__h1
+    {
+        font-size: 1em;
+    }
+    .containerClock__p
+    {
+        font-size: 0.3em;
+    }
+}
 @media screen and (max-width: 600px) {
-    .container-clock h1
+    .containerClock
     {
-        font-size: 10vw;
-        font-weight: 200;
+        display: grid;
+        grid-template-columns: 75%;
+        grid-template-rows: 6% 3%;
+        font-size: 36px;
     }
-
-    .container-clock p
+    .containerClock__h1
     {
-        font-size: 3vw;
+        font-size: 1em;
     }
-  }
+    .containerClock__p
+    {
+        font-size: 0.3em;
+    }
+}
+@media screen and (max-width: 300px) {
+    .containerClock
+    {
+        display: grid;
+        grid-template-columns: 75%;
+        grid-template-rows: 10% 5%;
+        font-size: 25px;
+    }
+    .containerClock__h1
+    {
+        font-size: 1em;
+    }
+    .containerClock__p
+    {
+        font-size: 0.3em;
+    }
+}
